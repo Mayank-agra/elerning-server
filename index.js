@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import { connectDb } from "./database/db.js";
+import { connectDb } from "./Database/db.js";
 import Razorpay from "razorpay";
 import cors from "cors";
 import axios from "axios";
