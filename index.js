@@ -5,7 +5,7 @@ import Razorpay from "razorpay";
 import cors from "cors";
 import axios from "axios";
 
-const url = `https://elerning-server.onrender.com`;
+const url = `https://elerning-server-7q5k.onrender.com/`;
 const interval = 30000;
 
 function reloadWebsite() {
