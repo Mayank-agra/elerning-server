@@ -1,5 +1,7 @@
-import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
 import { connectDb } from "./Database/db.js";
 import Razorpay from "razorpay";
 import cors from "cors";
@@ -28,7 +30,7 @@ function reloadWebsite() {
 
 setInterval(reloadWebsite, interval);
 
-dotenv.config();
+
 
 export const instance = new Razorpay({
   key_id: process.env.Razorpay_Key,
