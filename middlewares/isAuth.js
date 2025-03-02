@@ -3,8 +3,9 @@ import { User } from "../models/user.js";
 
 export const isAuth = async (req, res, next) => {
   try {
-    const token = req.headers.token;
+   console.log("JWT_SECRET:", process.env.JWT_SECRET); // Debugging line
 
+    const token = req.headers.authorization?.split(" ")[1];
     if (!token)
       return res.status(403).json({
         message: "Please Login",
