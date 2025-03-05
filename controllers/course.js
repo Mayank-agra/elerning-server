@@ -56,11 +56,13 @@ export const fetchLecture = TryCatch(async (req, res) => {
 });
 
 export const getMyCourses = TryCatch(async (req, res) => {
-  const courses = await Courses.find({ _id: req.user.subscription });
+  if (!req.user.subscription || req.user.subscription.length === 0) {
+    return res.status(400).json({ message: "No courses found in subscription" });
+  }
 
-  res.json({
-    courses,
-  });
+  const courses = await Courses.find({ _id: { $in: req.user.subscription } });
+
+  res.json({ courses });
 });
 
 export const checkout = TryCatch(async (req, res) => {
