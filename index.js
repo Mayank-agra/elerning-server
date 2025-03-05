@@ -60,10 +60,7 @@ app.get("/", (req, res) => {
 
 app.use("/uploads", express.static("uploads"));
 
-// importing routes
-import userRoutes from "./routes/user.js";
-import courseRoutes from "./routes/course.js";
-import adminRoutes from "./routes/admin.js";
+
 
 // using routes
 app.use("/api/user", userRoutes);
