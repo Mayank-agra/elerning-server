@@ -6,6 +6,10 @@ import { connectDb } from "./Database/db.js";
 import Razorpay from "razorpay";
 import cors from "cors";
 import axios from "axios";
+import userRoutes from './routes/user.js';
+import adminRoutes from './routes/admin.js';
+import courseRoutes from './routes/course.js';
+
 
 const url = `https://elerning-server-82h6.onrender.com`;
 const interval = 30000;
